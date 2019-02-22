@@ -51,17 +51,28 @@ In root folder create the folder `.vscode` and inside that folder the file `task
             "command": "tsc",
             "args": [
                 "-p",
-                ".vscode/../vendingmachine/ts"
+                ".vscode/../vendingmachine/ts",
+                "--watch"
             ],
             "problemMatcher": "$tsc",
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
             }
         }
     ]
 }
 ```
+
+| The above json configuration file will compile automatically each time you save a file, the trick to do this is the `--watch` command, besides that the *`presentation`* json will hide the compilation terminal output.
 
 ### tsconfig.json
 
