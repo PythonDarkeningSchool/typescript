@@ -1,5 +1,7 @@
 
 
+
+
 # Pre-requisites
 
 
@@ -221,6 +223,8 @@ variableName: typeOfVariable = <value>;
 
 ## Method or function structure
 
+### Inside a class
+
 #### Without arguments
 
 ```typescript
@@ -236,6 +240,20 @@ someMethod(<variableName>: <dataType>): returnTypeValue {
     // code here
 }
 ```
+
+### As a variable
+
+The following examples are also know as lambda functions
+
+![functions](img/functions.JPG)
+
+
+
+#### With objects as parameters
+
+![function with object](img/functions_with_objects.JPG)
+
+| Notice that the *`question mark`* is to declare that the parameter is optional
 
 ## Arrow functions
 
@@ -276,7 +294,10 @@ let <variableName> = (<variable>: <variableType>): returnType => {
 Considerations
 
 1. if the implementation of the function only consist in one line you do not have to use curly braces `{}`
-   1. When using an arrow function without curly braces `{}` you always have to *return* something
+
+   1. When using an arrow function without curly braces `{}` you always have to *return* something unless you explicitly defined the return type to *`void`*, e.g:
+
+   ![arrow function void](img/arrow_function_void.JPG)
 2. If you have to use multiples lines you need the curly braces `{}`
 3. `*This*` keyword in arrow function always refers to the object (of the class) the function is in
 
