@@ -299,7 +299,7 @@ notSure = false;
 
 
 
-![variables](img/variables.jpg)
+![variables](img/variables.JPG)
 
 ## Type inference
 
