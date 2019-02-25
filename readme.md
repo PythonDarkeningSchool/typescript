@@ -4,11 +4,17 @@
 
 
 
-## Install an IDE
+## TypeScript editors
+
+### Install an IDE
 
 Visual Studio Code is recommended to use it
 
-[Visual Studio Code](https://code.visualstudio.com)
+[Download here](https://code.visualstudio.com)
+
+### From the web
+
+[TypeScript Playground](https://www.typescriptlang.org/play)
 
 ## Installing TypeScript
 
@@ -95,13 +101,13 @@ Inside to your ts folder create the file `tsconfig.json` with the following cont
 ## TypeScript
 
 - TypeScript is a superset of JavaScript
-- Open source
+- Open source language that compiles to JavaScript code
 - Maintained by Microsoft
 - Transpiles to a configurable JavaScript version
 - Uses ES6/ES7 sintax if possible
 - Adds typing
 
-*In my personal point of view, `TypeScript` it is a lenguage to enhance the main `JavaScript` lenguage making it kind of  `Java` like a typed lenguage.*
+*In my personal point of view, `TypeScript` it is a language to enhance the main `JavaScript` language making it kind of  `Java` like a typed language.*
 
 ### Benefits of a typed language
 
@@ -109,7 +115,15 @@ Inside to your ts folder create the file `tsconfig.json` with the following cont
 - Less bugs
 - Autocomplete/Intellisense
 - Makes endless type checking unnecesary
--  Bottom line: it saves you a lot of time
+- Bottom line: it saves you a lot of time
+- Code encapsulation
+- Type Support
+- Support multiple tools
+  - node.js
+  - sublime (and others)
+  - Visual Studio
+
+
 
 
 
@@ -228,11 +242,23 @@ someMethod(<variableName>: <dataType>): returnTypeValue {
 
 #### Arrow functions as method
 
+e.g 1:
+
 ```typescript
 methodName = (<variable>: <variableType>): returnType => {
  	// code here   
-}
+};
 ```
+
+e.g 2:
+
+```typescript
+methodName : (<variable>: <variableType>, <variable>: <variableType>) => returnType = function () {
+ 	// code here   
+};
+```
+
+
 
 #### Arrow functions in a variable
 
@@ -270,6 +296,10 @@ var notSure: any = 4;
 notSure = "maybe a string instead";
 notSure = false;
 ```
+
+
+
+![variables](img/variables.jpg)
 
 ## Type inference
 
