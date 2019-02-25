@@ -94,6 +94,7 @@ Inside to your ts folder create the file `tsconfig.json` with the following cont
 
 ## TypeScript
 
+- TypeScript is a superset of JavaScript
 - Open source
 - Maintained by Microsoft
 - Transpiles to a configurable JavaScript version
@@ -109,6 +110,26 @@ Inside to your ts folder create the file `tsconfig.json` with the following cont
 - Autocomplete/Intellisense
 - Makes endless type checking unnecesary
 -  Bottom line: it saves you a lot of time
+
+
+
+## Important keywords and operators
+
+| Keyword          | Description                                            |
+| ---------------- | ------------------------------------------------------ |
+| class            | container for members such as propiertes and functions |
+| constructor      | provides initialization functionality in a class       |
+| exports          | export a member from a module                          |
+| implements       | implement an interface                                 |
+| imports          | import a module                                        |
+| interface        | define code contract that can be inplemented by types  |
+| module/namespace | container for classes and other code                   |
+| public/private   | memeber visibility modifiers                           |
+| ...              | rest parameter sintax                                  |
+| =>               | arrow sintax used with definitions and functions       |
+| <typeName>       | <> characters use to cast/convert between types        |
+| :                | separator between variable/parameter names and types   |
+|                  |                                                        |
 
 
 
