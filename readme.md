@@ -112,6 +112,14 @@ Inside to your ts folder create the file `tsconfig.json` with the following cont
 
 *In my personal point of view, `TypeScript` it is a language to enhance the main `JavaScript` language making it kind of  `Java` like a typed language.*
 
+
+
+## Overview
+
+All JavaScript is Valid TypeScript
+
+![overview](img/overview.JPG)
+
 ### Benefits of a typed language
 
 - Mistakes are detected up front
@@ -197,7 +205,9 @@ The naming conviction for methods or functions is camelCase
 
 
 
-## Class structure
+## TypeScript Class
+
+### Class structure
 
 ```typescript
 class SomeClass {
@@ -205,18 +215,57 @@ class SomeClass {
 }
 ```
 
-## Class atributtes
+### Class attributes
+
+Public attributes
 
 ```typescript
-variableName: typeOfVariable = <value>;
+<variableName>: <typeOfVariable> = <value>;
 ```
 
+> Class attributes are *`public`* by default
 
+Private attributes
 
-## Imports
+```typescript
+private <variableName>: <typeOfVariable> = <value>;
+```
+
+### Imports
 
 ```typescript
 /// <reference path="<path>/<file.ts>" />
+```
+
+### Defining constructors
+
+Example #1 (Explicit definition of class attributes):
+
+```typescript
+class Car {
+    engine: string; // explicit definition
+    constructor(engine: string){
+        this.engine = engine;
+    }
+}
+```
+
+Example #2 (Implicit definition of class attributes):
+
+```typescript
+class Car {
+    constructor(public engine: string){ }
+}
+```
+
+> The word `public` means that the variable `engine` is declared implicitly as a class attribute
+
+## Instantiating a Type
+
+Types are instantiated using the *`new`* keyword
+
+```typescript
+let <variableName> = new ClassName();
 ```
 
 
@@ -228,7 +277,7 @@ variableName: typeOfVariable = <value>;
 #### Without arguments
 
 ```typescript
-someMethod(): returnTypeValue {
+<someMethod>(): <returnTypeValue> {
     // code here
 }
 ```
@@ -236,7 +285,7 @@ someMethod(): returnTypeValue {
 #### With arguments
 
 ```typescript
-someMethod(<variableName>: <dataType>): returnTypeValue {
+<someMethod>(<variableName>: <dataType>): <returnTypeValue> {
     // code here
 }
 ```
@@ -307,7 +356,9 @@ Considerations
 this.variableName
 ```
 
-| To refere to some global attribute on the class level we have to use `this`  *keyword*
+> To refere to some global attribute on the class level we have to use `this`  *keyword*
+>
+> `*this` * keyword refers to the current `object`
 
 ## Variables
 
@@ -371,7 +422,7 @@ e.g in class
 
 ```typescript
 // Defining the class
-class SomeClass {
+class Quarter {
     private <dataType>: <variableName> = <value>;
 }
 
@@ -440,6 +491,111 @@ enum VendingMachineSize {
    1. It can increase the maintainability of code
 3. Readability of Code
    1. Code can become more readability using enums, because of the semantics of it
+
+
+
+## Class and Interfaces
+
+An interface is a way to write your code cleaner following a pattern to write function.
+
+One request of the intefaces is that the function must be implemented all the structure.
+
+## `interface structure`
+
+```typescript
+interface SquareFunction {
+    (x: number): number,
+}
+```
+
+You can interpret the following points regarding the above inteface:
+
+- *`interface`* its a reserved word like in C/Java ... lenguage
+- The interface name should be in `CamelCase`
+- The interaface could contains several parameters on it separated by comma
+- The only one parameter has the following structure:
+  - Its a function that receive as argument a number `(x: number)`
+  - Its must have a return parameter of type `number`
+
+### Example 1 (`interface SquareFunction`)
+
+Having the above clear, the following example tell us how to implement an inteface
+
+```typescript
+// Define the interface
+interface SquareFunction {
+    (x: number): number, // first parameter which is a function
+}
+    
+// Implementation of the interface
+let squareItBasic: SquareFunction =
+    (num: number) => num * num;
+```
+
+Points to consider
+
+- The variable that contains the interface could has more parameters, but it must have all the implementations from the interface
+
+- A representation of the `Implemetation of the interface` is
+
+  - ```typescript
+    let <variableName>: <IntefaceName / which is the type of object> =
+        (<variable>: <type>) => return type must be a number // Arrow function
+    ```
+
+
+
+### Example 2 (`interface person`)
+
+```typescript
+// Person interface
+inteface Person {
+    name: string;
+    age?: number; // this variable is optional
+    kids: number;
+    calcPets: () => number; // could be an arrow or normal function with no parameters
+    makeYounger: (years: number) => void; // no return function defined
+    greet: (msg: string) => string;
+}
+
+// Implementation into a function
+let p: Person = {
+    favoriteMovie: "LORT", // this is allowed
+    name: "Collen",
+    age: 40,
+    kids: 4,
+    calcPets: function(){
+        return this.kids *2;
+    },
+    makeYounger: function(years: number){
+      this.age -= years;  
+    },
+    greet: function(){
+        return msg + "," + this.name;
+    }
+}
+
+
+// Examine the object "p" created, examples:
+let pets = p.calcPets();
+console.log(pets);
+
+p.makeYounger(10);
+let newAge = p.age;
+console.log(newAge);
+```
+
+## Throw errors
+
+Example
+
+```
+if(<value> == undefined) throw "someMessage";
+```
+
+
+
+
 
 # Thid Party Libraries
 
